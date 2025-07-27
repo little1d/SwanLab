@@ -88,9 +88,9 @@ class LoginInfo:
         if self.__resp.reason == "OK":
             return "Login success"
         if self.__resp.reason == "Unauthorized" or self.__resp.reason == "Authorization Required":
-            return "Error api key"
+            return "Error api key. Please go to the website's settings page to check if your API Key is correct, and re-login through `swanlab login --relogin`."
         if self.__resp.reason == "Forbidden":
-            return "You need to be verified first"
+            return "You need to be verified first. Please check if the API Key matches the SwanLab platform."
         return str(self.__resp.status_code) + " " + self.__resp.reason
 
     def save(self):

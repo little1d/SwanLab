@@ -45,7 +45,7 @@ def test_login_error_key():
     login_info = auth.login_by_key("wrong-key", save=False)
     assert login_info.is_fail
     assert login_info.api_key is None
-    assert login_info.__str__() == "Error api key"
+    assert login_info.__str__() == "Error api key. Please go to the website's settings page to check if your API Key is correct, and re-login through `swanlab login --relogin`"
 
 
 @pytest.mark.skipif(T.is_skip_cloud_test, reason="skip cloud test")
